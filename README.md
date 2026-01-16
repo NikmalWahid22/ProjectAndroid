@@ -4,6 +4,9 @@
 ### - Mata Kuliah: Pemrograman Mobile 1
 ### - Dosen Pengampu: Donny Maulana, S.Kom., M.M.S.I.,
 
+### Link Video: 
+### LInk Clickup:  
+
 # 1. Pendahuluan 
 
 ## 1.1 Latar Belakang
@@ -81,7 +84,25 @@ Antarmuka dirancang menggunakan XML dengan pendekatan:
 - SharedPreferences digunakan untuk menyimpan data sesi pengguna.
 - Bottom Navigation digunakan untuk mempermudah navigasi antar halaman.
 
-## 4.3 Pengujian dan Evaluasi 
+## 4.3 Cuplikan Tampilan Aplikasi 
+
+## 📸 Screenshot Aplikasi
+
+| Halaman | Preview |
+|--------|---------|
+| Splash Screen | ![](ss/splash.jpeg) |
+| Pilih Bahasa | ![](ss/Bahasa.jpeg) |
+| Welcome | ![](ss/welcome.jpeg) |
+| Login | ![](ss/login.jpeg) |
+| Register | ![](ss/register.jpeg) |
+| Home | ![](ss/home.jpeg) |
+| Search | ![](ss/search.jpeg) |
+| Cart | ![](ss/cart.jpeg) |
+| Profile | ![](ss/profile.jpeg) |
+| Detail Produk | ![](ss/detail.jpeg) |
+
+
+
 
 # 5. Pengujian dan Evaluasi 
 
