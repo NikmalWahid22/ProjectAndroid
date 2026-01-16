@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Campeat</string>
+
+    <string name="notif_welcome_title">ようこそ</string>
+    <string name="notif_welcome_text">素敵な一日をお過ごしください 😊</string>
+
+
+    <string name="splash_camp">Camp</string>
+    <string name="splash_eats">Eats</string>
+    <string name="splash_tagline">あなたのキャンパス・ダイニング・パートナー</string>
+
+    <string name="language_title_camp">Camp</string>
+    <string name="language_title_eats">Eats</string>
+    <string name="language_tagline">あなたのキャンパス・ダイニング・パートナー</string>
+    <string name="language_selamat">ようこそ</string> <string name="language_datang"></string>
+    <string name="language_continue">次へ</string>
+
+    <string name="welcome_title_camp">Camp</string>
+    <string name="welcome_title_eats">Eats</string>
+    <string name="welcome_tagline">あなたのキャンパス・ダイニング・パートナー</string>
+    <string name="welcome_sign_in">ログイン</string>
+    <string name="welcome_sign_up">新規登録</string>
+    <string name="welcome_copyright">
+        著作権 2025\nMuhamad Nikmal Wahid
+    </string>
+
+    <string name="signin_title">ログイン</string>
+    <string name="signin_subtitle">こんにちは！おかえりなさい</string>
+    <string name="signin_email_hint">メールアドレス</string>
+    <string name="signin_password_hint">パスワード</string>
+    <string name="signin_forgot_password">パスワードをお忘れですか？</string>
+    <string name="signin_button">ログイン</string>
+    <string name="signin_or_with">または次でログイン</string>
+    <string name="signin_no_account">アカウントをお持ちでないですか？ 新規登録</string>
+
+    <string name="signup_title">新規登録</string>
+    <string name="signup_subtitle">新しいアカウントを作成</string>
+    <string name="signup_email_hint">メールアドレス</string>
+    <string name="signup_password_hint">パスワード</string>
+    <string name="signup_button">登録する</string>
+    <string name="signup_or_with">または次で登録</string>
+    <string name="signup_has_account">すでにアカウントをお持ちですか？ ログイン</string>
+
+    <string name="home_subtitle">お気に入りのメニューを選ぼう。</string>
+    <string name="promo_today">本日のプロモーション</string>
+    <string name="order">注文する</string>
+    <string name="popular_food">人気の料理</string>
+
+    <string name="cd_google">Googleでログイン</string>
+    <string name="cd_facebook">Facebookでログイン</string>
+    <string name="cd_x">Xでログイン</string>
+
+    <string name="search_title">お気に入りを見つけよう</string>
+    <string name="search_subtitle">チェックアウト前に注文を確認してください</string>
+    <string name="search_hint">料理、飲み物を検索</string>
+    <string name="search_filter">フィルター</string>
+
+    <string name="result_for">検索結果：</string>
+    <string name="result_sample">バーガー</string>
+
+    <string name="content_description_back_button">戻るボタン</string>
+    <string name="meal_name_placeholder">ハンバーガー</string>
+    <string name="meal_price_placeholder">Rp 25,000</string>
+    <string name="tag_detail">詳細</string>
+    <string name="meal_description_placeholder">
+        ふわふわのバンズ、ジューシーな肉、新鮮な野菜、特製ソースが絶品のハンバーガー。
+    </string>
+    <string name="button_add_to_cart">カートに追加</string>
+    <string name="content_description_meal_image">料理画像</string>
+
+    <string name="cart_item_name_placeholder">料理名</string>
+    <string name="cart_item_details_placeholder">普通盛り | 辛さレベル3</string>
+    <string name="cart_item_price_placeholder">Rp 25,000</string>
+    <string name="cart_item_qty_placeholder">1</string>
+    <string name="cart_item_remove_button">削除</string>
+    <string name="cart_item_notes_hint">備考（オプション）</string>
+    <string name="content_description_item_image">カートアイテム画像</string>
+    <string name="button_plus">+</string>
+    <string name="button_minus">-</string>
+
+    <string name="cart_title">カート</string>
+    <string name="cart_subtitle">チェックアウト前に注文内容を確認してください</string>
+    <string name="cart_empty_desc">空のカート</string>
+    <string name="cart_empty_title">カートは空です</string>
+    <string name="cart_start_shopping">買い物を始める</string>
+    <string name="cart_delivery">教室へ配達</string>
+    <string name="cart_pickup">店頭受け取り</string>
+    <string name="cart_checkout_default">チェックアウト ¥0</string>
+
+    <string name="profile_title">プロフィール</string>
+    <string name="profile_name">Nikmal Wahid</string>
+    <string name="profile_campus">Pelita Bangsa 大学</string>
+    <string name="profile_member_status">シルバー会員</string>
+    <string name="profile_my_account">マイアカウント\nプロフィール編集、学生証</string>
+    <string name="profile_settings">設定</string>
+    <string name="profile_logout">ログアウト</string>
+
+    <string name="payment_method">支払い方法</string>
+    <string name="payment_ewallet">電子マネー</string>
+    <string name="payment_transfer">銀行振込</string>
+    <string name="payment_cash">現金</string>
+    <string name="payment_choose_warning">支払い方法を選択してください</string>
+
+
+</resources>

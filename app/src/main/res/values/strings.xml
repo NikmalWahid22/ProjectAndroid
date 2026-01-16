@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Campeat</string>
+
+    <string name="notif_welcome_title">Selamat Datang</string>
+    <string name="notif_welcome_text">Semoga harimu menyenangkan 😊</string>
+
+
+    <!-- SPLASH -->
+    <string name="splash_camp">Camp</string>
+    <string name="splash_eats">Eats</string>
+    <string name="splash_tagline">Partner Makan Kampus Anda</string>
+
+    <!-- LANGUAGE -->
+    <string name="language_title_camp">Camp</string>
+    <string name="language_title_eats">Eats</string>
+    <string name="language_tagline">Partner Makan Kampus Anda</string>
+    <string name="language_selamat">Selamat </string>
+    <string name="language_datang">Datang</string>
+    <string name="language_continue">Lanjutkan</string>
+
+    <!-- WELCOME -->
+    <string name="welcome_title_camp">Camp</string>
+    <string name="welcome_title_eats">Eats</string>
+    <string name="welcome_tagline">Partner Makan Kampus Anda</string>
+    <string name="welcome_sign_in">Masuk</string>
+    <string name="welcome_sign_up">Daftar</string>
+    <string name="welcome_copyright">
+        Hak Cipta 2025\nMuhamad Nikmal Wahid
+    </string>
+
+    <!-- SIGN IN -->
+    <string name="signin_title">Masuk</string>
+    <string name="signin_subtitle">Halo! Selamat datang kembali</string>
+    <string name="signin_email_hint">Email</string>
+    <string name="signin_password_hint">Kata Sandi</string>
+    <string name="signin_forgot_password">Lupa kata sandi?</string>
+    <string name="signin_button">Masuk</string>
+    <string name="signin_or_with">Atau masuk dengan</string>
+    <string name="signin_no_account">Belum punya akun? Daftar</string>
+
+    <!-- SIGN UP -->
+    <string name="signup_title">Daftar</string>
+    <string name="signup_subtitle">Buat akun baru</string>
+    <string name="signup_email_hint">Email</string>
+    <string name="signup_password_hint">Kata Sandi</string>
+    <string name="signup_button">Daftar</string>
+    <string name="signup_or_with">Atau daftar dengan</string>
+    <string name="signup_has_account">Sudah punya akun? Masuk</string>
+
+    <!-- SOCIAL -->
+    <string name="cd_google">Masuk dengan Google</string>
+    <string name="cd_facebook">Masuk dengan Facebook</string>
+    <string name="cd_x">Masuk dengan X</string>
+
+     !--  HOME -->
+
+    <string name="home_subtitle">Favoritkan menu favoritmu.</string>
+    <string name="promo_today">Promo Hari Ini</string>
+    <string name="order">Pesan</string>
+    <string name="popular_food">Makanan Populer</string>
+
+
+    <!-- SEARCH -->
+    <string name="search_title">Temukan Favoritmu</string>
+    <string name="search_subtitle">Periksa pesanan sebelum checkout</string>
+    <string name="search_hint">Cari makanan, minuman</string>
+    <string name="search_filter">Filter</string>
+
+    <!-- RESULT -->
+    <string name="result_for">Hasil untuk:</string>
+    <string name="result_sample">Burger</string>
+
+    <!-- DETAIL -->
+    <string name="content_description_back_button">Tombol Kembali</string>
+    <string name="meal_name_placeholder">Hamburger</string>
+    <string name="meal_price_placeholder">Rp 25.000</string>
+    <string name="tag_detail">Detail</string>
+    <string name="meal_description_placeholder">
+        Hamburger lezat dengan roti lembut, daging juicy, sayuran segar, dan saus khas.
+    </string>
+    <string name="button_add_to_cart">Tambah ke Keranjang</string>
+    <string name="content_description_meal_image">Gambar Makanan</string>
+
+    <!-- CART -->
+    <string name="cart_item_name_placeholder">Makanan</string>
+    <string name="cart_item_details_placeholder">Porsi Regular | Discount </string>
+    <string name="cart_item_price_placeholder">Rp 25.000</string>
+    <string name="cart_item_qty_placeholder">1</string>
+    <string name="cart_item_remove_button">Hapus</string>
+    <string name="cart_item_notes_hint">Catatan (Opsional)</string>
+    <string name="content_description_item_image">Gambar Item Keranjang</string>
+    <string name="button_plus">+</string>
+    <string name="button_minus">-</string>
+
+    <string name="cart_title">My Cart</string>
+    <string name="cart_subtitle">Periksa pesanan kamu sebelum checkout</string>
+    <string name="cart_empty_desc">Keranjang kosong</string>
+    <string name="cart_empty_title">Keranjang Belanjamu Kosong</string>
+    <string name="cart_start_shopping">Mulai Belanja</string>
+    <string name="cart_delivery">Antar ke kelas</string>
+    <string name="cart_pickup">Ambil di tempat</string>
+    <string name="cart_checkout_default">Checkout Rp 0</string>
+
+    <!-- PROFILE -->
+    <string name="profile_title">Profil</string>
+    <string name="profile_name">Nikmal Wahid</string>
+    <string name="profile_campus">Universitas Pelita Bangsa</string>
+    <string name="profile_member_status">Anggota Silver</string>
+    <string name="profile_my_account">Akun Saya\nEdit Profil, ID Kampus</string>
+    <string name="profile_settings">Pengaturan</string>
+    <string name="profile_logout">Keluar</string>
+
+
+    <!-- Payment -->
+    <string name="payment_method">Metode Pembayaran</string>
+    <string name="payment_ewallet">E-Wallet</string>
+    <string name="payment_transfer">Transfer Bank</string>
+    <string name="payment_cash">Cash</string>
+    <string name="payment_choose_warning">Pilih metode pembayaran terlebih dahulu</string>
+
+</resources>
