@@ -4,8 +4,8 @@
 ### - Mata Kuliah: Pemrograman Mobile 1
 ### - Dosen Pengampu: Donny Maulana, S.Kom., M.M.S.I.,
 
-### Link Video: 
-### LInk Clickup:  
+### Link Video: https://youtu.be/A3Y0fhpCb6o?si=Q-u1eCcjRXdd7olB
+### LInk Clickup:  https://sharing.clickup.com/90181799294/l/h/4-90187327418-1/979bc9884f335c5
 
 # 1. Pendahuluan 
 
