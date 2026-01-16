@@ -92,7 +92,7 @@ Antarmuka dirancang menggunakan XML dengan pendekatan:
 
 | Halaman | Preview | Halaman | Preview |
 |--------|---------|--------|---------|
-| Splash Screen | <img src="ss/splash.jpeg" width="220"/> | Pilih Bahasa | <img src="ss/Bahasa.jpeg" width="220"/> |
+| Splash Screen | <img src="ss/splash.jpeg" width="220"/> | Pilih Bahasa | <img src="ss/bahasa.jpeg" width="220"/> |
 | Welcome | <img src="ss/welcome.jpeg" width="220"/> | Login | <img src="ss/login.jpeg" width="220"/> |
 | Register | <img src="ss/register.jpeg" width="220"/> | Home | <img src="ss/home.jpeg" width="220"/> |
 | Search | <img src="ss/search.jpeg" width="220"/> | Cart | <img src="ss/cart.jpeg" width="220"/> |
