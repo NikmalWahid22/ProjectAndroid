@@ -90,17 +90,16 @@ Antarmuka dirancang menggunakan XML dengan pendekatan:
 
 | Halaman | Preview |
 |--------|---------|
-| Splash Screen | ![](ss/splash.jpeg) |
-| Pilih Bahasa | ![](ss/Bahasa.jpeg) |
-| Welcome | ![](ss/welcome.jpeg) |
-| Login | ![](ss/login.jpeg) |
-| Register | ![](ss/register.jpeg) |
-| Home | ![](ss/home.jpeg) |
-| Search | ![](ss/search.jpeg) |
-| Cart | ![](ss/cart.jpeg) |
-| Profile | ![](ss/profile.jpeg) |
-| Detail Produk | ![](ss/detail.jpeg) |
-
+| Splash Screen | <img src="ss/splash.jpeg" width="220"/> |
+| Pilih Bahasa | <img src="ss/Bahasa.jpeg" width="220"/> |
+| Welcome | <img src="ss/welcome.jpeg" width="220"/> |
+| Login | <img src="ss/login.jpeg" width="220"/> |
+| Register | <img src="ss/register.jpeg" width="220"/> |
+| Home | <img src="ss/home.jpeg" width="220"/> |
+| Search | <img src="ss/search.jpeg" width="220"/> |
+| Cart | <img src="ss/cart.jpeg" width="220"/> |
+| Profile | <img src="ss/profile.jpeg" width="220"/> |
+| Detail Produk | <img src="ss/detail.jpeg" width="220"/> |
 
 
 
