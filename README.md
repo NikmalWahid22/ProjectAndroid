@@ -88,8 +88,8 @@ Antarmuka dirancang menggunakan XML dengan pendekatan:
 
 ## Mockup Dan Storyboard 
 
-![Gambar 1](mockup.png)
-![Gambar 2](storyboard.png)
+![Gambar 1](Mockup.png)
+![Gambar 2](Storyboard.png)
 
 
 ## Cuplikan Tampilan Aplikasi
