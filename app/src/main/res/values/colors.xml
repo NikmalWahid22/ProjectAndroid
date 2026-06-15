@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="bg_home">#D9FFE8</color> <!-- Background Utama -->
+    <color name="card_order">#FFFFFF</color> <!-- Card Item Makanan -->
+    <color name="card_accent">#87FFD0</color> <!-- Card/Badge Sekunder -->
+    <color name="food_name_label">#9DFFD8</color> <!-- Nama Label Makanan -->
+    <color name="btn_primary">#006C46</color> <!-- Button & Filter Aktif -->
+    <color name="text_main">#125B49</color> <!-- Text Deskripsi -->
+    <color name="text_header">#003629</color> <!-- Halo Admin/Header -->
+    <color name="text_title">#002112</color> <!-- Incoming Order/Judul -->
 </resources>

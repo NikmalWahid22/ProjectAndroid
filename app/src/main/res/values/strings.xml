@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Campeat</string>
+    <string name="app_name">CanteenHub</string>
 
     <string name="notif_welcome_title">Selamat Datang</string>
     <string name="notif_welcome_text">Semoga harimu menyenangkan 😊</string>
 
 
     <!-- SPLASH -->
-    <string name="splash_camp">Camp</string>
-    <string name="splash_eats">Eats</string>
+    <string name="splash_camp">Canteen</string>
+    <string name="splash_eats">Hub</string>
     <string name="splash_tagline">Partner Makan Kampus Anda</string>
 
     <!-- LANGUAGE -->
-    <string name="language_title_camp">Camp</string>
-    <string name="language_title_eats">Eats</string>
+    <string name="language_title_camp">Canteen</string>
+    <string name="language_title_eats">Hub</string>
     <string name="language_tagline">Partner Makan Kampus Anda</string>
     <string name="language_selamat">Selamat </string>
     <string name="language_datang">Datang</string>
     <string name="language_continue">Lanjutkan</string>
 
     <!-- WELCOME -->
-    <string name="welcome_title_camp">Camp</string>
+    <string name="welcome_title_camp">CanteenHub</string>
     <string name="welcome_title_eats">Eats</string>
     <string name="welcome_tagline">Partner Makan Kampus Anda</string>
     <string name="welcome_sign_in">Masuk</string>
@@ -120,4 +120,104 @@
     <string name="payment_cash">Cash</string>
     <string name="payment_choose_warning">Pilih metode pembayaran terlebih dahulu</string>
 
+    <!-- ===== HOME ADMIN ===== -->
+    <string name="hallo_admin">Hallo, Admin 👋</string>
+    <string name="incoming_orders">Incoming Orders</string>
+
+    <!-- Order Card -->
+    <string name="order_id_prefix"># CE - </string>
+    <string name="order_status_pending">Pending</string>
+    <string name="order_status_process">Process</string>
+    <string name="order_status_done">Done</string>
+    <string name="order_time">12.30 PM Today</string>
+    <string name="order_total_label">Total</string>
+    <string name="order_total_amount">Rp 25.000</string>
+    <string name="btn_process_order">Process Order</string>
+
+    <!-- Sample Order Items -->
+    <string name="item_mie_ayam">Mie Ayam</string>
+    <string name="item_es_teh">Es Teh</string>
+    <string name="item_qty_1">1x</string>
+    <string name="item_qty_2">2x</string>
+    <string name="item_qty_3">3x</string>
+
+    <!-- Sample Order IDs -->
+    <string name="order_id_1"># CE - 12345</string>
+    <string name="order_id_2"># CE - 67890</string>
+
+    <!-- Sample Customer Names -->
+    <string name="customer_name_1">Nikmal Wahid</string>
+
+    <!-- Stats Cards -->
+    <string name="label_daily_revenue">Daily Revenue</string>
+    <string name="label_total_orders">Total Orders</string>
+    <string name="revenue_amount">Rp 1.500.000</string>
+    <string name="total_orders_count">150 Order</string>
+    <string name="stats_change_from_yesterday">+5 from yesterday</string>
+    <string name="stats_arrow">↗</string>
+
+    <!-- Export Button -->
+    <string name="btn_export_report">Export Report PDF</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_orders">Orders</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- ===== ORDER DETAIL ADMIN ===== -->
+    <string name="order_detail_title">Order #CE - 12345</string>
+    <string name="order_placed_on">Placed On 25 April , 2023 at 12:45 PM</string>
+    <string name="customer_detail">Customer Detail</string>
+
+    <!-- Customer Detail Labels -->
+    <string name="label_nama">Nama</string>
+    <string name="label_contact">Contact</string>
+    <string name="label_payment_method">Payment Method</string>
+    <string name="label_pickup_method">Pick-Up Method</string>
+
+    <!-- Update Status -->
+    <string name="update_status">Update Status</string>
+    <string name="status_pending">Pending</string>
+    <string name="status_process">Process</string>
+    <string name="status_ready">Ready</string>
+    <string name="status_success">Success</string>
+
+    <!-- Buttons -->
+    <string name="btn_save_changes">Save Changes</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- ===== MANAGE MENU ADMIN ===== -->
+    <string name="manage_menu">Manage Menu</string>
+    <string name="btn_tambah_menu">+ Tambah Menu</string>
+    <string name="hint_cari_menu">Cari Menu</string>
+
+    <!-- Information Card -->
+    <string name="information">Information</string>
+    <string name="total_item">Total Item</string>
+    <string name="categories">Categories</string>
+    <string name="low_stock">Low Stock</string>
+    <string name="live_stock">Live Stock</string>
+
+    <!-- Menu Item -->
+    <string name="category_makanan">Makanan</string>
+    <string name="category_minuman">Minuman</string>
+    <string name="item_ayam_geprek">Ayam Geprek</string>
+    <string name="item_price_15000">Rp 15000</string>
+    <string name="item_price_10000">Rp 10000</string>
+
+    <!-- ===== ADD MENU ADMIN ===== -->
+    <string name="add_menu">Add Menu</string>
+    <string name="item_photo">Item Photo</string>
+    <string name="photo_tips">High Quality images help customers decide. Use natural lighting and clear background</string>
+    <string name="btn_replace">⟳  Replace</string>
+    <string name="btn_delete">🗑  Delete</string>
+    <string name="label_menu_name">Menu Name</string>
+    <string name="label_price">Price</string>
+    <string name="label_category">Category</string>
+    <string name="label_stock">Stock</string>
+    <string name="label_description">Description</string>
+    <string name="archive_menu">Archive Menu</string>
+    <string name="edit_menu">Edit Menu</string>
+
+    <string name="category_food">Makanan</string>
 </resources>
