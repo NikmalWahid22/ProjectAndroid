@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="12dp">
+
+    <!-- GAMBAR -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_order_item"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_placeholder"
+        app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+    <!-- INFO -->
+    <!-- INFO -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/tv_order_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mie Ayam"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="13sp"
+            android:textColor="#002112" />
+
+        <TextView
+            android:id="@+id/tv_order_item_customize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Topping: Pangsit"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="11sp"
+            android:textColor="#6B6B6B"
+            android:visibility="gone" />
+
+        <!-- TAMBAHKAN TEXTVIEW INI DI BAWAH CUSTOMIZE -->
+        <TextView
+            android:id="@+id/tv_item_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Catatan: Pedas"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="11sp"
+            android:textColor="#FF8A00"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- HARGA -->
+    <TextView
+        android:id="@+id/tv_order_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp 15.000"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="13sp"
+        android:textColor="#006C46" />
+
+</LinearLayout>

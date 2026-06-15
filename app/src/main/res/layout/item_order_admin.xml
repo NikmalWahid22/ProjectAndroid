@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- ORDER ID -->
+        <TextView
+            android:id="@+id/tv_order_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ORDER-001"
+            android:textColor="#125B49"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"/>
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="@font/inter_semibold"
+            android:clickable="false"
+            android:focusable="false"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/bg_badge_pending"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- CUSTOMER -->
+        <TextView
+            android:id="@+id/tv_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer"
+            android:textColor="#002112"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_id"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- TIME -->
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:30 PM"
+            android:textColor="#125B49"
+            android:textSize="12sp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_customer_name"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- ITEMS CONTAINER -->
+        <LinearLayout
+            android:id="@+id/layout_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TOTAL LABEL -->
+        <TextView
+            android:id="@+id/tv_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textColor="#002112"
+            android:textSize="15sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_items"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- TOTAL -->
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 25.000"
+            android:textColor="#002112"
+            android:textSize="15sp"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_items"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- BUTTON -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_process_order"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="Process Order"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="#006C46"
+            app:cornerRadius="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@id/tv_total"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

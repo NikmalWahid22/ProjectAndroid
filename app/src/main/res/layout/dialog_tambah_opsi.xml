@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- LABEL OPSI -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Label Opsi"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/et_opsi_label"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_field_input"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:hint="contoh: Level Pedas"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- TIPE OPSI -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipe Pilihan"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_opsi_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_single"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pilih Satu"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="13sp"
+            android:textColor="#002112"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb_multiple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pilih Banyak"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="13sp"
+            android:textColor="#002112" />
+
+    </RadioGroup>
+
+    <!-- PILIHAN -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilihan (pisah dengan koma)"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/et_opsi_choices"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_field_input"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="10dp"
+        android:hint="contoh: Tidak Pedas, Sedang, Pedas"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:inputType="textMultiLine"
+        android:gravity="top" />
+
+</LinearLayout>

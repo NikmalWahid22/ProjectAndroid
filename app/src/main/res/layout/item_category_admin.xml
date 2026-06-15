@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#F5FFF9"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- ICON KATEGORI -->
+        <ImageView
+            android:id="@+id/img_category_icon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/manage_icon"
+            android:padding="8dp"
+            android:background="@drawable/bg_item_food"
+            app:tint="#006C46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- NAMA KATEGORI -->
+        <TextView
+            android:id="@+id/tv_category_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Makanan"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="13sp"
+            android:textColor="#002112"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_category_icon"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete_category" />
+
+        <!-- TOMBOL HAPUS -->
+        <ImageView
+            android:id="@+id/btn_delete_category"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/delete_icon"
+            android:padding="7dp"
+            android:background="@drawable/bg_btn_delete"
+            app:tint="@android:color/white"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

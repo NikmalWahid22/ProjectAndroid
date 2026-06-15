@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF8F2"
+    tools:context=".EditMenuAdminActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_add_menu_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Menu"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="22sp"
+                android:textColor="#002112"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_menu_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_photo"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="14sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="10dp" />
+
+                    <FrameLayout
+                        android:id="@+id/frame_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:background="@drawable/bg_photo_preview"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:id="@+id/layout_photo_placeholder"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="18dp">
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:src="@drawable/photo"
+                                app:tint="#006C46" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/photo_tips"
+                                android:fontFamily="@font/inter_regular"
+                                android:textSize="11sp"
+                                android:textColor="#6B6B6B"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:layout_marginTop="8dp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/img_photo_preview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:id="@+id/btn_replace_photo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:background="@drawable/bg_btn_replace"
+                            android:layout_marginEnd="6dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/process"
+                                app:tint="#006C46"
+                                android:layout_marginEnd="6dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Replace"
+                                android:fontFamily="@font/inter_semibold"
+                                android:textSize="13sp"
+                                android:textColor="#006C46" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btn_delete_photo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:background="@drawable/bg_btn_delete"
+                            android:layout_marginStart="6dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/delete_icon"
+                                app:tint="@android:color/white"
+                                android:layout_marginEnd="6dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Delete"
+                                android:fontFamily="@font/inter_semibold"
+                                android:textSize="13sp"
+                                android:textColor="#FFFFFF" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E6EFEA"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_menu_name"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/et_menu_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_field_input"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:textColorHint="#A8B8AF"
+                        android:hint="Nama menu"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_price"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/et_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_field_input"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:textColorHint="#A8B8AF"
+                        android:hint="10000"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_category"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="6dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_field_input"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_stock"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/et_stock"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_field_input"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:textColorHint="#A8B8AF"
+                        android:hint="10"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_description"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/et_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/bg_field_input"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="10dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="13sp"
+                        android:textColor="#002112"
+                        android:textColorHint="#A8B8AF"
+                        android:hint="Deskripsi menu"
+                        android:inputType="textMultiLine"
+                        android:gravity="top" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E6EFEA"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customize Options"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="14sp"
+                        android:textColor="#002112"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_customize_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <LinearLayout
+                        android:id="@+id/btn_tambah_opsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:background="@drawable/bg_btn_replace"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_add"
+                            app:tint="#006C46"
+                            android:layout_marginEnd="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tambah Opsi"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textSize="13sp"
+                            android:textColor="#006C46" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:background="#EEF8F2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save_changes"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Update Menu"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_button_primary" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/btn_cancel"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="15sp"
+            android:textColor="#002112"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_archive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/archive"
+                app:tint="#E53935"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/tv_archive_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/archive_menu"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="13sp"
+                android:textColor="#E53935" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

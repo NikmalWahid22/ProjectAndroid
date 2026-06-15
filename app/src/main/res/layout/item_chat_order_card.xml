@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="top"
+    android:paddingBottom="12dp">
+
+    <!-- BOT AVATAR -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        app:cardCornerRadius="17dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#006C46"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_bot"
+            android:padding="8dp"
+            app:tint="#FFFFFF" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- CARD CONTENT -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- ORDER INFO CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:minWidth="220dp">
+
+                <!-- ORDER ID + STATUS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_order_id"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="#CE-12345"
+                        android:fontFamily="@font/inter_bold"
+                        android:textSize="14sp"
+                        android:textColor="#002112" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pending"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="11sp"
+                        android:textColor="#F59E0B"
+                        android:background="@drawable/bg_tag_offer"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp" />
+
+                </LinearLayout>
+
+                <!-- DIVIDER -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#F0F7F4"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- ITEM ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- FOOD IMAGE -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_food"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_placeholder"
+                        app:shapeAppearanceOverlay="@style/RoundedImage"
+                        android:layout_marginEnd="10dp" />
+
+                    <!-- FOOD INFO -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_food_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ayam Geprek"
+                            android:fontFamily="@font/inter_semibold"
+                            android:textSize="13sp"
+                            android:textColor="#002112" />
+
+                        <TextView
+                            android:id="@+id/tv_estimated"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estimated delivery: 15 Minutes"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="11sp"
+                            android:textColor="#7A9E8E"
+                            android:layout_marginTop="3dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- TIME -->
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00 AM"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="10sp"
+            android:textColor="#9AB5A8"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <!-- Spacer kanan -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="1dp" />
+
+</LinearLayout>

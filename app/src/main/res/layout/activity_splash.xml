@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#EEF8F2">
 
     <ImageView
         android:id="@+id/logoImage"
@@ -34,18 +35,18 @@
             android:text="@string/language_title_camp"
             android:textSize="32sp"
             android:textFontWeight="700"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="#FF000000" />
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="#002112" />
 
         <TextView
             android:id="@+id/textEats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/language_title_eats"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/inter_semibold"
             android:textSize="32sp"
             android:textFontWeight="700"
-            android:textColor="#4CAF50" />
+            android:textColor="#006C46" />
     </LinearLayout>
 
     <TextView
@@ -54,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/language_tagline"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="#808080"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="#002112"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/et_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_field_input"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="13sp"
+        android:textColor="#002112"
+        android:inputType="text"
+        android:maxLines="1" />
+
+</LinearLayout>

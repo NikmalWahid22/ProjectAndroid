@@ -1,23 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@android:color/transparent"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
 
-    <EditText
-        android:id="@+id/et_name"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:inputType="textPersonName"/>
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#D9FFE8">
 
-    <EditText
-        android:id="@+id/et_uni"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Universitas"
-        android:inputType="textCapWords"
-        android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="28dp">
+
+            <!-- ICON CIRCLE -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#006C46"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/edit_icon"
+                    android:padding="18dp"
+                    app:tint="#FFFFFF" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Edit Profile"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="24sp"
+                android:textColor="#006C46"
+                android:layout_marginBottom="4dp" />
+
+            <!-- SUBTITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Perbarui informasi profilmu"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="12sp"
+                android:textColor="#555555"
+                android:layout_marginBottom="28dp" />
+
+            <!-- WHITE CARD FORM -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <!-- NAMA LABEL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Lengkap"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="6dp" />
+
+                    <!-- NAMA FIELD - green bg like login -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#006C46"
+                        android:layout_marginBottom="16dp">
+
+                        <EditText
+                            android:id="@+id/et_edit_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@null"
+                            android:hint="Masukkan nama lengkap"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColorHint="#A8D5BF"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:inputType="textPersonName"
+                            android:imeOptions="actionNext" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- PHONE LABEL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nomor Telepon"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="13sp"
+                        android:textColor="#1A1A1A"
+                        android:layout_marginBottom="6dp" />
+
+                    <!-- PHONE FIELD - green bg like login -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#006C46">
+
+                        <EditText
+                            android:id="@+id/et_edit_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@null"
+                            android:hint="08xxxxxxxxxx"
+                            android:fontFamily="@font/inter_regular"
+                            android:textColorHint="#A8D5BF"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:inputType="phone"
+                            android:imeOptions="actionDone" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- BUTTON SIMPAN -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Simpan"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#006C46"
+                app:cornerRadius="14dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- BUTTON BATAL -->
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Batal"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="16sp"
+                android:textColor="#006C46"
+                android:backgroundTint="#C8F5E0"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
