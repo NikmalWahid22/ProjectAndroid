@@ -4,6 +4,9 @@
 ### - Mata Kuliah: Pemrograman Mobile 1
 ### - Dosen Pengampu: Donny Maulana, S.Kom., M.M.S.I.,
 
+### Link Video: https://youtu.be/A3Y0fhpCb6o?si=Q-u1eCcjRXdd7olB
+### LInk Clickup:  https://sharing.clickup.com/90181799294/l/h/4-90187327418-1/979bc9884f335c5
+
 # 1. Pendahuluan 
 
 ## 1.1 Latar Belakang
@@ -81,7 +84,26 @@ Antarmuka dirancang menggunakan XML dengan pendekatan:
 - SharedPreferences digunakan untuk menyimpan data sesi pengguna.
 - Bottom Navigation digunakan untuk mempermudah navigasi antar halaman.
 
-## 4.3 Pengujian dan Evaluasi 
+## 4.3 Cuplikan Tampilan Aplikasi 
+
+## Mockup Dan Storyboard 
+
+![Gambar 1](Mockup.png)
+![Gambar 2](Storyboard.png)
+
+
+## Cuplikan Tampilan Aplikasi
+
+| Halaman | Preview | Halaman | Preview |
+|--------|---------|--------|---------|
+| Splash Screen | <img src="ss/splash.jpeg" width="220"/> | Pilih Bahasa | <img src="ss/bahasa.jpeg" width="220"/> |
+| Welcome | <img src="ss/welcome.jpeg" width="220"/> | Login | <img src="ss/login.jpeg" width="220"/> |
+| Register | <img src="ss/register.jpeg" width="220"/> | Home | <img src="ss/home.jpeg" width="220"/> |
+| Search | <img src="ss/search.jpeg" width="220"/> | Cart | <img src="ss/cart.jpeg" width="220"/> |
+| Profile | <img src="ss/profile.jpeg" width="220"/> | Detail Produk | <img src="ss/detail.jpeg" width="220"/> |
+
+
+
 
 # 5. Pengujian dan Evaluasi 
 
