@@ -132,6 +132,7 @@ Pada semester sebelumnya, aplikasi CampEats versi awal telah dikembangkan dengan
 | Profile | <img src="UIDesign/Profile(Update).png" width="220"/> | Detail Produk | <img src="UIDesign/Detail(Update).png" width="220"/> |
 | Keranjang Update | <img src="UIDesign/Cart2(Update).png" width="220"/> | Tracking Order | <img src="UIDesign/OrderTracking(Update).png" width="220"/> |
 | Final Order | <img src="UIDesign/FinalizeOrder(Update).png" width="220"/> | Success Order | <img src="UIDesign/Success(Update).png" width="220"/> |
+| AI Assistant | <img src="UIDesign/AIAssistant(Update).png" width="220"/> | | |
 
 ### Tampilan Aplikasi — Sisi Admin (Design Figma)
 
