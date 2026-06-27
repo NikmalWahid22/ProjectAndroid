@@ -65,6 +65,7 @@ Pada semester sebelumnya, aplikasi CampEats versi awal telah dikembangkan dengan
 | **Pemilihan Bahasa** | Pengaturan bahasa aplikasi saat awal penggunaan |
 | **Daftar Menu** | Menampilkan daftar menu makanan menggunakan `RecyclerView` |
 | **Pencarian Menu** | Mencari menu makanan secara cepat dan spesifik |
+| **AI Assistant** | Fitur AI Chatbot dengan model Gemini Flash 2.5 Lite |
 | **Keranjang Pesanan** | Mengelola item yang akan dipesan sebelum checkout |
 | **Checkout & Pembayaran** | Proses checkout dengan metode pembayaran digital dan kalkulasi total harga otomatis |
 | **Tracking Pesanan** | Memantau status pesanan secara real-time |
