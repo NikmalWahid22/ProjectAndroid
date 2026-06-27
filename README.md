@@ -13,7 +13,7 @@
 
 ---
 
-![Poster](Mockup/poster.png)
+![Poster](Mockup/Poster.png)
 
 
 ## Daftar Isi
