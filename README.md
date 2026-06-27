@@ -13,6 +13,9 @@
 
 ---
 
+![Poster](Mockup/poster.png)
+
+
 ## Daftar Isi
 
 - [Tentang Proyek](#tentang-proyek)
