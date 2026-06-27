@@ -2,8 +2,11 @@ package com.campeat.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-        // Klik masuk ke HomeActivity (yang ada navbar)
         btnSignIn.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, SignInActivity.class));
             finish();
@@ -28,4 +30,5 @@ public class MainActivity extends AppCompatActivity {
             finish();
         });
     }
+
 }

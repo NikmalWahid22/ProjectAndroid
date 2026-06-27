@@ -1,37 +1,79 @@
 package com.campeat.app.utils;
 
 import com.campeat.app.model.CartItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartManager {
 
-    private static final List<CartItem> cartList = new ArrayList<>();
+    // singleton list, persist selama app hidup
+    private static final List<CartItem> cartItems = new ArrayList<>();
 
-    // Tambah item ke cart
-    public static void addItem(CartItem item) {
-        for (CartItem c : cartList) {
-            if (c.getId() == item.getId()) {
-                c.setQuantity(c.getQuantity() + item.getQuantity());
+    // ================================
+    // TAMBAH ITEM
+    // ================================
+    public static void addItem(CartItem newItem) {
+        // cek apakah menu yang sama sudah ada di cart
+        for (CartItem item : cartItems) {
+            if (item.getMenuKey().equals(newItem.getMenuKey())
+                    && item.getCustomizeOptions().equals(newItem.getCustomizeOptions())) {
+                // kalau sama, tambah quantity aja
+                item.setQuantity(item.getQuantity() + newItem.getQuantity());
                 return;
             }
         }
-        cartList.add(item);
+        // kalau belum ada, tambah baru
+        cartItems.add(newItem);
     }
 
-    // Ambil semua item cart
-    public static List<CartItem> getCart() {
-        return cartList;
+    // ================================
+    // HAPUS ITEM
+    // ================================
+    public static void removeItem(CartItem item) {
+        cartItems.remove(item);
     }
 
-    // Cek kosong
-    public static boolean isEmpty() {
-        return cartList.isEmpty();
+    // ================================
+    // GET SEMUA ITEM
+    // ================================
+    public static List<CartItem> getItems() {
+        return cartItems;
     }
 
-    // Hapus semua (misal setelah checkout)
+    // ================================
+    // TOTAL HARGA
+    // ================================
+    public static double getTotalPrice() {
+        double total = 0;
+        for (CartItem item : cartItems) {
+            total += item.getPrice() * item.getQuantity();
+        }
+        return total;
+    }
+
+    // ================================
+    // TOTAL ITEM COUNT (untuk badge)
+    // ================================
+    public static int getTotalCount() {
+        int count = 0;
+        for (CartItem item : cartItems) {
+            count += item.getQuantity();
+        }
+        return count;
+    }
+
+    // ================================
+    // CLEAR CART (setelah checkout)
+    // ================================
     public static void clearCart() {
-        cartList.clear();
+        cartItems.clear();
+    }
+
+    // ================================
+    // CEK APAKAH CART KOSONG
+    // ================================
+    public static boolean isEmpty() {
+        return cartItems.isEmpty();
     }
 }
-

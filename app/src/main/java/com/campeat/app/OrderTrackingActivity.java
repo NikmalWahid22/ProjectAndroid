@@ -3,6 +3,7 @@ package com.campeat.app;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -17,8 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.campeat.app.model.CartItem;
-import com.campeat.app.utils.CartManager;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -52,20 +51,31 @@ public class OrderTrackingActivity extends AppCompatActivity {
     private double total;
     private int point;
 
+    // Disimpan setelah load dari Firebase untuk dikirim ke Receipt
+    private double totalFromFirebase = 0;
+    private int    pointFromFirebase  = 0;
+    private String paymentFromFirebase = "";
+
     private final String DB_URL =
-            "https://campeat-8c587-default-rtdb.asia-southeast1.firebasedatabase.app";
+            "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_tracking);
 
+        getWindow().setStatusBarColor(Color.parseColor("#EEF8F2"));
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
         getIntentData();
         initViews();
         loadOrderFromFirebase();
         setupBottomNav();
 
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v -> {
+            animateNavClick(v);
+            v.postDelayed(this::finish, 100);
+        });
     }
 
     // ================================
@@ -73,39 +83,40 @@ public class OrderTrackingActivity extends AppCompatActivity {
     // ================================
     private void getIntentData() {
         orderId = getIntent().getStringExtra("orderId");
-        total = getIntent().getDoubleExtra("total", 0);
-        point = getIntent().getIntExtra("point", 0);
+        total   = getIntent().getDoubleExtra("total", 0);
+        point   = getIntent().getIntExtra("point", 0);
     }
 
     // ================================
     // INIT VIEWS
     // ================================
     private void initViews() {
-        btnBack = findViewById(R.id.btn_back);
-        tvQueueNumber = findViewById(R.id.tv_queue_number);
+        btnBack         = findViewById(R.id.btn_back);
+        tvQueueNumber   = findViewById(R.id.tv_queue_number);
         tvEstimatedTime = findViewById(R.id.tv_estimated_time);
-        tvStatusTitle = findViewById(R.id.tv_status_title);
-        tvStatusDesc = findViewById(R.id.tv_status_desc);
-        tvYourPoint = findViewById(R.id.tv_your_point);
-        tvTotal = findViewById(R.id.tv_total);
-        icStep1 = findViewById(R.id.ic_step1);
-        icStep2 = findViewById(R.id.ic_step2);
-        icStep3 = findViewById(R.id.ic_step3);
-        icStep4 = findViewById(R.id.ic_step4);
-        tvStep1Time = findViewById(R.id.tv_step1_time);
-        rvOrderItems = findViewById(R.id.rv_order_items);
-        navHome = findViewById(R.id.nav_home);
-        navSearch = findViewById(R.id.nav_search);
-        navCart = findViewById(R.id.nav_cart);
-        navProfile = findViewById(R.id.nav_profile);
+        tvStatusTitle   = findViewById(R.id.tv_status_title);
+        tvStatusDesc    = findViewById(R.id.tv_status_desc);
+        tvYourPoint     = findViewById(R.id.tv_your_point);
+        tvTotal         = findViewById(R.id.tv_total);
+        icStep1         = findViewById(R.id.ic_step1);
+        icStep2         = findViewById(R.id.ic_step2);
+        icStep3         = findViewById(R.id.ic_step3);
+        icStep4         = findViewById(R.id.ic_step4);
+        tvStep1Time     = findViewById(R.id.tv_step1_time);
+        rvOrderItems    = findViewById(R.id.rv_order_items);
+        navHome         = findViewById(R.id.nav_home);
+        navSearch       = findViewById(R.id.nav_search);
+        navCart         = findViewById(R.id.nav_cart);
+        navProfile      = findViewById(R.id.nav_profile);
     }
 
     // ================================
-    // LOAD ORDER FROM FIREBASE
+    // LOAD ORDER
     // ================================
     private void loadOrderFromFirebase() {
         String uid = FirebaseAuth.getInstance().getCurrentUser() != null
-                ? FirebaseAuth.getInstance().getCurrentUser().getUid() : null;
+                ? FirebaseAuth.getInstance().getCurrentUser().getUid()
+                : null;
 
         if (uid == null || orderId == null) return;
 
@@ -114,6 +125,7 @@ public class OrderTrackingActivity extends AppCompatActivity {
                 .child(uid)
                 .child(orderId)
                 .addValueEventListener(new ValueEventListener() {
+
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
 
@@ -123,14 +135,20 @@ public class OrderTrackingActivity extends AppCompatActivity {
                                 : orderId.toUpperCase();
                         tvQueueNumber.setText("#CE-" + shortId);
 
-                        // ESTIMATED TIME dari Firebase
-                        String estimatedTime = snapshot.child("estimatedTime")
-                                .getValue(String.class);
-                        tvEstimatedTime.setText(
-                                estimatedTime != null ? estimatedTime : "Menunggu...");
-
                         // STATUS
                         String status = snapshot.child("status").getValue(String.class);
+                        String estimatedTime = "15 mins";
+
+                        if (status != null) {
+                            switch (status) {
+                                case "Pending":   estimatedTime = "15 mins";   break;
+                                case "Process":   estimatedTime = "10 mins";   break;
+                                case "Ready":     estimatedTime = "2 mins";    break;
+                                case "Done":      estimatedTime = "Completed"; break;
+                            }
+                        }
+
+                        tvEstimatedTime.setText(estimatedTime);
                         updateStatusUI(status != null ? status : "Pending");
 
                         // DATE
@@ -139,30 +157,51 @@ public class OrderTrackingActivity extends AppCompatActivity {
 
                         // POINT
                         Integer pointVal = snapshot.child("point").getValue(Integer.class);
-                        tvYourPoint.setText("⭐ +" + (pointVal != null ? pointVal : 0) + " pt");
+                        pointFromFirebase = pointVal != null ? pointVal : 0;
+                        tvYourPoint.setText("⭐ +" + pointFromFirebase + " pt  · View Receipt →");
+                        tvYourPoint.setClickable(true);
+                        tvYourPoint.setFocusable(true);
 
                         // TOTAL
                         Double totalVal = snapshot.child("total").getValue(Double.class);
+                        totalFromFirebase = totalVal != null ? totalVal : 0;
                         Locale localeID = new Locale("id", "ID");
                         NumberFormat format = NumberFormat.getCurrencyInstance(localeID);
-                        tvTotal.setText(format.format(totalVal != null ? totalVal : 0));
+                        tvTotal.setText(format.format(totalFromFirebase));
+
+                        // PAYMENT
+                        String paymentVal = snapshot.child("payment").getValue(String.class);
+                        paymentFromFirebase = paymentVal != null ? paymentVal : "";
+
+                        // VIEW RECEIPT CLICK — setelah data loaded
+                        tvYourPoint.setOnClickListener(v -> {
+                            Intent intent = new Intent(
+                                    OrderTrackingActivity.this,
+                                    ReceiptActivity.class
+                            );
+                            intent.putExtra("orderId", orderId);
+                            intent.putExtra("total",   totalFromFirebase);
+                            intent.putExtra("payment", paymentFromFirebase);
+                            intent.putExtra("point",   pointFromFirebase);
+                            startActivity(intent);
+                        });
 
                         // ITEMS
                         List<TrackingItem> items = new ArrayList<>();
-                        DataSnapshot itemsSnap = snapshot.child("items");
-                        for (DataSnapshot itemSnap : itemsSnap.getChildren()) {
-                            String name = itemSnap.child("name").getValue(String.class);
-                            Double price = itemSnap.child("price").getValue(Double.class);
-                            Integer qty = itemSnap.child("quantity").getValue(Integer.class);
-                            String customize = itemSnap.child("customizeOptions")
-                                    .getValue(String.class);
+                        for (DataSnapshot itemSnap : snapshot.child("items").getChildren()) {
+                            String name        = itemSnap.child("name").getValue(String.class);
+                            Double price       = itemSnap.child("price").getValue(Double.class);
+                            Integer qty        = itemSnap.child("quantity").getValue(Integer.class);
+                            String customize   = itemSnap.child("customizeOptions").getValue(String.class);
+                            String notes       = itemSnap.child("notes").getValue(String.class);
+                            String imageBase64 = itemSnap.child("imageBase64").getValue(String.class);
 
                             if (name != null) {
                                 items.add(new TrackingItem(
                                         name,
-                                        price != null ? price : 0,
-                                        qty != null ? qty : 1,
-                                        customize
+                                        price    != null ? price  : 0,
+                                        qty      != null ? qty    : 1,
+                                        customize, notes, imageBase64
                                 ));
                             }
                         }
@@ -215,73 +254,100 @@ public class OrderTrackingActivity extends AppCompatActivity {
 
             case "Done":
                 tvStatusTitle.setText("Order Complete!");
-                tvStatusDesc.setText("Pesananmu telah diambil. Selamat menikmati! 😊");
+                tvStatusDesc.setText("Pesananmu telah diambil. Selamat menikmati!");
                 icStep1.setImageResource(R.drawable.ic_step_done);
                 icStep2.setImageResource(R.drawable.ic_step_done);
                 icStep3.setImageResource(R.drawable.ic_step_done);
                 icStep4.setImageResource(R.drawable.ic_step_done);
                 break;
-
-            default:
-                tvStatusTitle.setText("Order Confirmed");
-                tvStatusDesc.setText("Pesanan kamu telah diterima.");
-                break;
         }
     }
 
     // ================================
-    // SETUP BOTTOM NAV
+    // BOTTOM NAVIGATION
     // ================================
     private void setupBottomNav() {
         navHome.setOnClickListener(v -> {
-            startActivity(new Intent(this, HomeActivity.class));
-            finish();
+            animateNavClick(v);
+            v.postDelayed(() -> {
+                startActivity(new Intent(this, HomeActivity.class));
+                overridePendingTransition(R.anim.modern_enter, R.anim.modern_exit);
+                finish();
+            }, 100);
         });
 
         navSearch.setOnClickListener(v -> {
-            startActivity(new Intent(this, SearchActivity.class));
-            finish();
+            animateNavClick(v);
+            v.postDelayed(() -> {
+                startActivity(new Intent(this, SearchActivity.class));
+                overridePendingTransition(R.anim.modern_enter, R.anim.modern_exit);
+                finish();
+            }, 100);
         });
 
         navCart.setOnClickListener(v -> {
-            startActivity(new Intent(this, CartActivity.class));
-            finish();
+            animateNavClick(v);
+            v.postDelayed(() -> {
+                startActivity(new Intent(this, CartActivity.class));
+                overridePendingTransition(R.anim.modern_enter, R.anim.modern_exit);
+                finish();
+            }, 100);
         });
 
         navProfile.setOnClickListener(v -> {
-            startActivity(new Intent(this, ProfileActivity.class));
-            finish();
+            animateNavClick(v);
+            v.postDelayed(() -> {
+                startActivity(new Intent(this, ProfileActivity.class));
+                overridePendingTransition(R.anim.modern_enter, R.anim.modern_exit);
+                finish();
+            }, 100);
         });
     }
 
+    private void animateNavClick(View view) {
+        view.animate()
+                .scaleX(0.96f).scaleY(0.96f).alpha(0.82f).setDuration(70)
+                .withEndAction(() -> view.animate()
+                        .scaleX(1f).scaleY(1f).alpha(1f).setDuration(130)
+                        .setInterpolator(new android.view.animation.OvershootInterpolator(1.4f))
+                        .start())
+                .start();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.modern_enter, R.anim.modern_exit);
+    }
+
     // ================================
-    // MODEL TRACKING ITEM
+    // MODEL ITEM
     // ================================
     private static class TrackingItem {
-        String name;
+        String name, customize, notes, imageBase64;
         double price;
         int qty;
-        String customize;
 
-        TrackingItem(String name, double price, int qty, String customize) {
-            this.name = name;
-            this.price = price;
-            this.qty = qty;
-            this.customize = customize;
+        TrackingItem(String name, double price, int qty,
+                     String customize, String notes, String imageBase64) {
+            this.name        = name;
+            this.price       = price;
+            this.qty         = qty;
+            this.customize   = customize;
+            this.notes       = notes;
+            this.imageBase64 = imageBase64;
         }
     }
 
     // ================================
-    // ADAPTER TRACKING ITEM
+    // ADAPTER
     // ================================
     private class TrackingItemAdapter
             extends RecyclerView.Adapter<TrackingItemAdapter.ViewHolder> {
 
-        private List<TrackingItem> items;
+        private final List<TrackingItem> items;
 
-        TrackingItemAdapter(List<TrackingItem> items) {
-            this.items = items;
-        }
+        TrackingItemAdapter(List<TrackingItem> items) { this.items = items; }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -295,34 +361,48 @@ public class OrderTrackingActivity extends AppCompatActivity {
             TrackingItem item = items.get(position);
 
             holder.tvName.setText(item.name + " x" + item.qty);
-            holder.tvCustomize.setText(
-                    item.customize != null ? item.customize : "");
-            holder.tvCustomize.setVisibility(
-                    item.customize != null && !item.customize.isEmpty()
-                            ? View.VISIBLE : View.GONE);
+
+            if (item.customize != null && !item.customize.trim().isEmpty()) {
+                holder.tvCustomize.setVisibility(View.VISIBLE);
+                holder.tvCustomize.setText(item.customize);
+            } else {
+                holder.tvCustomize.setVisibility(View.GONE);
+            }
+
+            if (item.notes != null && !item.notes.trim().isEmpty()) {
+                holder.tvNotes.setVisibility(View.VISIBLE);
+                holder.tvNotes.setText("Catatan: " + item.notes);
+            } else {
+                holder.tvNotes.setVisibility(View.GONE);
+            }
 
             Locale localeID = new Locale("id", "ID");
             NumberFormat format = NumberFormat.getCurrencyInstance(localeID);
             holder.tvPrice.setText(format.format(item.price * item.qty));
 
-            holder.imgItem.setImageResource(R.drawable.img_placeholder);
+            if (item.imageBase64 != null && !item.imageBase64.isEmpty()) {
+                byte[] decodedBytes = Base64.decode(item.imageBase64, Base64.DEFAULT);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+                holder.imgItem.setImageBitmap(bitmap);
+            } else {
+                holder.imgItem.setImageResource(R.drawable.img_placeholder);
+            }
         }
 
         @Override
-        public int getItemCount() {
-            return items != null ? items.size() : 0;
-        }
+        public int getItemCount() { return items != null ? items.size() : 0; }
 
         class ViewHolder extends RecyclerView.ViewHolder {
             ShapeableImageView imgItem;
-            TextView tvName, tvCustomize, tvPrice;
+            TextView tvName, tvCustomize, tvNotes, tvPrice;
 
             ViewHolder(View itemView) {
                 super(itemView);
-                imgItem = itemView.findViewById(R.id.img_order_item);
-                tvName = itemView.findViewById(R.id.tv_order_item_name);
+                imgItem     = itemView.findViewById(R.id.img_order_item);
+                tvName      = itemView.findViewById(R.id.tv_order_item_name);
                 tvCustomize = itemView.findViewById(R.id.tv_order_item_customize);
-                tvPrice = itemView.findViewById(R.id.tv_order_item_price);
+                tvNotes     = itemView.findViewById(R.id.tv_item_notes);
+                tvPrice     = itemView.findViewById(R.id.tv_order_item_price);
             }
         }
     }

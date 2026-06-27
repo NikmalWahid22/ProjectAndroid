@@ -1,10 +1,12 @@
 package com.campeat.app.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.campeat.app.R;
 import com.campeat.app.model.CartItem;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -35,7 +38,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         this.quantityChangeListener = listener;
     }
 
-    // ================= ADAPTER =================
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,34 +50,43 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         CartItem item = cartItemList.get(position);
 
-        // ===== DATA =====
-        holder.imageItem.setImageResource(item.getImage());
-        holder.textItemName.setText(item.getName());
-        holder.textQuantity.setText(String.valueOf(item.getQuantity()));
+        // ===== GAMBAR =====
+        if (item.getImageBase64() != null && !item.getImageBase64().isEmpty()) {
+            byte[] decoded = Base64.decode(item.getImageBase64(), Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+            holder.imageItem.setImageBitmap(bitmap);
+        } else {
+            holder.imageItem.setImageResource(R.drawable.img_placeholder);
+        }
 
+        // ===== NAMA =====
+        holder.textItemName.setText(item.getName());
+
+        // ===== CUSTOMIZE OPTIONS =====
+        if (item.getCustomizeOptions() != null
+                && !item.getCustomizeOptions().isEmpty()) {
+            holder.textCustomize.setVisibility(View.VISIBLE);
+            holder.textCustomize.setText(item.getCustomizeOptions());
+        } else {
+            holder.textCustomize.setVisibility(View.GONE);
+        }
+
+        // ===== NOTES =====
+        if (item.getNotes() != null && !item.getNotes().isEmpty()) {
+            holder.textNotes.setVisibility(View.VISIBLE);
+            holder.textNotes.setText("📝 " + item.getNotes());
+        } else {
+            holder.textNotes.setVisibility(View.GONE);
+        }
+
+        // ===== QUANTITY =====
+        holder.textQuantity.setText("x" + item.getQuantity());
+
+        // ===== HARGA =====
         double totalItemPrice = item.getPrice() * item.getQuantity();
         holder.textItemPrice.setText(formatRupiah(totalItemPrice));
 
-        // ===== ACTION MINUS =====
-        holder.btnMinus.setOnClickListener(v -> {
-            int qty = item.getQuantity() - 1;
-            if (qty > 0) {
-                item.setQuantity(qty);
-                notifyItemChanged(position);
-            } else {
-                removeItem(position);
-            }
-            notifyPriceChanged();
-        });
-
-        // ===== ACTION PLUS =====
-        holder.btnPlus.setOnClickListener(v -> {
-            item.setQuantity(item.getQuantity() + 1);
-            notifyItemChanged(position);
-            notifyPriceChanged();
-        });
-
-        // ===== ACTION REMOVE =====
+        // ===== REMOVE =====
         holder.textRemove.setOnClickListener(v -> {
             removeItem(position);
             notifyPriceChanged();
@@ -87,13 +98,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return cartItemList.size();
     }
 
-    // ================= LOGIC =================
     private void removeItem(int position) {
         CartItem item = cartItemList.get(position);
         cartItemList.remove(position);
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, cartItemList.size());
-
         Toast.makeText(context,
                 item.getName() + " dihapus dari keranjang",
                 Toast.LENGTH_SHORT).show();
@@ -105,41 +114,34 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
     }
 
-    // ================= UTIL =================
     private String formatRupiah(double number) {
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        String result = formatRupiah.format(number).replace("Rp", "Rp ").trim();
-        return result.substring(0, 2) + " " + result.substring(3);
+        Locale localeID = new Locale("id", "ID");
+        NumberFormat format = NumberFormat.getCurrencyInstance(localeID);
+        return format.format(number);
     }
 
-    // ================= INTERFACE =================
     public interface OnQuantityChangeListener {
         void onQuantityChange();
     }
 
-    // ================= VIEWHOLDER =================
     public static class CartViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imageItem;
+        ShapeableImageView imageItem;
         TextView textItemName;
         TextView textItemPrice;
-        TextView btnPlus;
-        TextView btnMinus;
+        TextView textCustomize;
+        TextView textNotes;
         TextView textQuantity;
         TextView textRemove;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imageItem = itemView.findViewById(R.id.image_item);
             textItemName = itemView.findViewById(R.id.text_item_name);
             textItemPrice = itemView.findViewById(R.id.text_item_price);
-
-            btnPlus = itemView.findViewById(R.id.btn_plus);
-            btnMinus = itemView.findViewById(R.id.btn_minus);
+            textCustomize = itemView.findViewById(R.id.text_customize);
+            textNotes = itemView.findViewById(R.id.text_notes);
             textQuantity = itemView.findViewById(R.id.text_quantity);
-
             textRemove = itemView.findViewById(R.id.text_remove);
         }
     }
