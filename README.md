@@ -1,137 +1,193 @@
-### - Nama: Muhamad Nikmal Wahid
-### - Kelas: TI 24 A3
-### - Nim: 312410372
-### - Mata Kuliah: Pemrograman Mobile 1
-### - Dosen Pengampu: Donny Maulana, S.Kom., M.M.S.I.,
+<div align="center">
 
-### Link Video: https://youtu.be/A3Y0fhpCb6o?si=Q-u1eCcjRXdd7olB
-### LInk Clickup:  https://sharing.clickup.com/90181799294/l/h/4-90187327418-1/979bc9884f335c5
+# CampEats
 
-# 1. Pendahuluan 
+**Aplikasi Pemesanan Makanan Berbasis Android untuk Lingkungan Kampus**
 
-## 1.1 Latar Belakang
+![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Java-007396?logo=java&logoColor=white)
+![IDE](https://img.shields.io/badge/IDE-Android%20Studio-3DDC84?logo=androidstudio&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 
-Perkembangan teknologi mobile telah mendorong digitalisasi berbagai aktivitas sehari-hari, termasuk dalam bidang layanan makanan. Di lingkungan kampus, proses pemesanan makanan masih sering dilakukan secara manual, yang berpotensi menimbulkan antrean, kesalahan pencatatan pesanan, serta kurangnya efisiensi waktu.
+</div>
 
-Oleh karena itu, dikembangkan aplikasi CampEats, yaitu aplikasi pemesanan makanan kampus berbasis Android yang bertujuan untuk mempermudah mahasiswa dalam menelusuri menu, melakukan pemesanan, serta mengelola transaksi secara digital dan terstruktur.
+---
 
-## 1.2 Rumusan Masalah 
+## Daftar Isi
 
-Permasalahan yang diangkat dalam pengembangan aplikasi ini antara lain:
+- [Tentang Proyek](#tentang-proyek)
+- [Latar Belakang](#latar-belakang)
+- [Fitur Utama](#fitur-utama)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Alur Sistem](#alur-sistem)
+- [Pratinjau Aplikasi](#pratinjau-aplikasi)
+- [Peningkatan dari Versi Sebelumnya](#peningkatan-dari-versi-sebelumnya)
+- [Pengujian](#pengujian)
+- [Kesimpulan](#kesimpulan)
+- [Informasi Proyek](#informasi-proyek)
+
+---
+
+## Tentang Proyek
+
+**CampEats** adalah aplikasi pemesanan makanan berbasis Android yang dirancang khusus untuk memudahkan aktivitas jual-beli makanan di lingkungan kampus. Proyek ini merupakan lanjutan dari pengembangan versi sebelumnya, dengan fokus utama pada **redesign UI/UX**, penambahan **fitur manajemen pesanan**, serta penyempurnaan **dashboard admin**.
+
+Aplikasi dibangun menggunakan **Java** dan **Android SDK**, dengan pendekatan **Material Design** untuk menghasilkan antarmuka yang bersih, modern, dan mudah digunakan oleh pengguna di lingkungan kampus.
+
+> Papan manajemen proyek: [ClickUp Board](https://app.clickup.com/90181799294/v/s/90187327418)
+
+---
+
+## Latar Belakang
+
+Pada semester sebelumnya, aplikasi CampEats versi awal telah dikembangkan dengan fitur dasar pemesanan makanan. Berdasarkan hasil evaluasi sistem, ditemukan beberapa area yang masih perlu ditingkatkan, di antaranya tampilan antarmuka, pengalaman pengguna, manajemen pesanan, serta kapasitas dashboard admin. Pengembangan lanjutan ini hadir untuk menjawab kebutuhan tersebut.
+
+**Rumusan masalah yang menjadi fokus pengembangan:**
 1. Bagaimana merancang aplikasi pemesanan makanan berbasis Android yang mudah digunakan?
-2. Bagaimana menerapkan sistem poin sebagai bentuk reward pengguna?
+2. Bagaimana menerapkan sistem poin sebagai bentuk reward bagi pengguna?
 
-# 1.3 Tujuan Penelitian 
-Tujuan dari pengembangan aplikasi CampEats adalah:
+**Tujuan pengembangan:**
 - Merancang dan membangun aplikasi pemesanan makanan berbasis Android.
 - Meningkatkan pengalaman pengguna melalui antarmuka yang sederhana dan modern.
 
-# 1.4 Manfaat Penelitian 
-- Bagi Mahasiswa: Mempermudah proses pemesanan makanan di lingkungan kampus.
-- Bagi Pengembang: Sebagai media pembelajaran penerapan Android Development dengan Java.
-- Bagi Akademik: Sebagai Studi Kasus Implementasi aplikasi mobile untuk lingkungan kampus.
+---
 
-# 2. Landasan Teori 
-## 2.1 Aplikasi Mobile 
+## Fitur Utama
 
-Aplikasi mobile merupakan perangkat lunak yang dirancang untuk berjalan pada perangkat bergerak seperti smartphone. Android adalah sistem operasi berbasis Linux yang banyak digunakan karena bersifat open-source dan memiliki ekosistem pengembangan yang luas.
+### Sisi Pengguna (User)
 
-## 2.2 Android SDK dan Java 
+| Fitur | Deskripsi |
+|---|---|
+| **Autentikasi** | Login dan registrasi akun pengguna |
+| **Pemilihan Bahasa** | Pengaturan bahasa aplikasi saat awal penggunaan |
+| **Daftar Menu** | Menampilkan daftar menu makanan menggunakan `RecyclerView` |
+| **Pencarian Menu** | Mencari menu makanan secara cepat dan spesifik |
+| **Keranjang Pesanan** | Mengelola item yang akan dipesan sebelum checkout |
+| **Checkout & Pembayaran** | Proses checkout dengan metode pembayaran digital dan kalkulasi total harga otomatis |
+| **Tracking Pesanan** | Memantau status pesanan secara real-time |
+| **Riwayat Transaksi** | Melihat histori pemesanan yang telah dilakukan |
+| **Sistem Poin/Reward** | Mendapatkan poin dari setiap transaksi sebagai bentuk reward |
+| **Manajemen Profil** | Mengelola data profil pengguna dan logout |
 
-Android SDK menyediakan berbagai library dan tools untuk membangun aplikasi Android. Bahasa pemrograman Java digunakan karena stabil, terstruktur, dan didukung penuh oleh Android Studio.
+### Sisi Admin
 
-## 2.3 Material Design 
+| Fitur | Deskripsi |
+|---|---|
+| **Dashboard Admin** | Ringkasan data dan aktivitas aplikasi secara menyeluruh |
+| **CRUD Menu Makanan** | Menambah, mengubah, melihat, dan menghapus data menu makanan |
+| **Manajemen Pesanan** | Mengelola dan memantau pesanan yang masuk dari pengguna |
 
-Android SDK menyediakan berbagai library dan tools untuk membangun aplikasi Android. Bahasa pemrograman Java digunakan karena stabil, terstruktur, dan didukung penuh oleh Android Studio.
+---
 
-# 3. Analisis dan Perancangan Sistem 
-## 3.1 Analisis Kebutuhan Fungsional 
-Aplikasi CampEats memiliki kebutuhan fungsional sebagai berikut:
-- Autentikasi pengguna (login dan registrasi)
-- Menampilkan daftar menu makanan
-- Pencarian menu makanan
-- Manajemen keranjang pesanan
-- Proses checkout dan perhitungan total harga
-- Riwayat transaksi pemesanan
-- Sistem poin/reward
-- Manajemen profil pengguna dan logout
-  
-## 3.2 Alur Sistem 
+## Teknologi yang Digunakan
 
-1. Pengguna melakukan login atau registrasi akun.
-2. Pengguna mengakses halaman beranda dan melihat daftar menu.
-3. Pengguna memilih menu dan menambahkannya ke keranjang.
-4. Pengguna melakukan checkout dan memilih metode pembayaran.
-5. Sistem menyimpan transaksi dan menambahkan poin reward.
+| Komponen | Teknologi |
+|---|---|
+| Bahasa Pemrograman | Java |
+| Platform | Android |
+| UI Design | XML + Material Design |
+| IDE | Android Studio |
+| Tampilan Daftar Data | `RecyclerView` |
+| Penyimpanan Sesi | `SharedPreferences` |
+| Navigasi | `Bottom Navigation` |
 
-## 3.3 Perancangan Antarmuka 
-Antarmuka dirancang menggunakan XML dengan pendekatan:
+---
+
+## Alur Sistem
+
+```
+1. Pengguna melakukan login atau registrasi akun
+        v
+2. Pengguna mengakses halaman beranda dan melihat daftar menu
+        v
+3. Pengguna memilih menu dan menambahkannya ke keranjang
+        v
+4. Pengguna melakukan checkout dan memilih metode pembayaran
+        v
+5. Sistem menyimpan transaksi dan menambahkan poin reward
+```
+
+**Pendekatan perancangan antarmuka:**
 - Tampilan sederhana dan modern
 - Navigasi menggunakan Bottom Navigation
 - Konsistensi warna dan komponen Material Design
 
-# 4. Implementasi Sistem 
-## 4.1 Teknologi Yang Digunakan 
+---
 
-- Bahasa Pemrograman: Java
-- Platform: Android
-- UI Design: XML + Material Design
-- IDE: Android Studio
+## Pratinjau Aplikasi
 
-## 4.2 Implementasi Fitur Utama 
+### Mockup & Storyboard
 
-- RecyclerView digunakan untuk menampilkan daftar menu makanan.
-- SharedPreferences digunakan untuk menyimpan data sesi pengguna.
-- Bottom Navigation digunakan untuk mempermudah navigasi antar halaman.
+![Gambar 1](Mockup/mockup.png)
+![Gambar 2](Mockup/Storyboard.png)
 
-## 4.3 Cuplikan Tampilan Aplikasi 
-
-## Mockup Dan Storyboard 
-
-![Gambar 1](Mockup.png)
-![Gambar 2](Storyboard.png)
-
-
-## Cuplikan Tampilan Aplikasi
+### Tampilan Aplikasi — Sisi User (Design Figma)
 
 | Halaman | Preview | Halaman | Preview |
 |--------|---------|--------|---------|
-| Splash Screen | <img src="ss/splash.jpeg" width="220"/> | Pilih Bahasa | <img src="ss/bahasa.jpeg" width="220"/> |
-| Welcome | <img src="ss/welcome.jpeg" width="220"/> | Login | <img src="ss/login.jpeg" width="220"/> |
-| Register | <img src="ss/register.jpeg" width="220"/> | Home | <img src="ss/home.jpeg" width="220"/> |
-| Search | <img src="ss/search.jpeg" width="220"/> | Cart | <img src="ss/cart.jpeg" width="220"/> |
-| Profile | <img src="ss/profile.jpeg" width="220"/> | Detail Produk | <img src="ss/detail.jpeg" width="220"/> |
+| Splash Screen | <img src="UIDesign/Splash.png" width="220"/> | Pilih Bahasa | <img src="UIDesign/Bahasa.png" width="220"/> |
+| Welcome | <img src="UIDesign/Welcome.png" width="220"/> | Login | <img src="UIDesign/SIgnIn.png" width="220"/> |
+| Register | <img src="UIDesign/CreateAccount.png" width="220"/> | Home | <img src="UIDesign/Home(Update).png" width="220"/> |
+| Search | <img src="UIDesign/SearchUI(Update).png" width="220"/> | Cart | <img src="UIDesign/Cart(Update).png" width="220"/> |
+| Profile | <img src="UIDesign/Profile(Update).png" width="220"/> | Detail Produk | <img src="UIDesign/Detail(Update).png" width="220"/> |
+| Keranjang Update | <img src="UIDesign/Cart2(Update).png" width="220"/> | Tracking Order | <img src="UIDesign/OrderTracking(Update).png" width="220"/> |
+| Final Order | <img src="UIDesign/FinalizeOrder(Update).png" width="220"/> | Success Order | <img src="UIDesign/Success(Update).png" width="220"/> |
 
+### Tampilan Aplikasi — Sisi Admin (Design Figma)
 
+| Halaman | Preview | Halaman | Preview |
+|--------|---------|--------|---------|
+| Dashboard Admin 1 | <img src="AdminUI/DashboardAdmin.png" width="220"/> | Dashboard Admin 2 | <img src="AdminUI/DashboardAdmin2.png" width="220"/> |
+| Dashboard Admin 3 | <img src="AdminUI/DashboardAdmin3.png" width="220"/> | Dashboard Admin 4 | <img src="AdminUI/DashboardAdmin4.png" width="220"/> |
+| Dashboard Admin 5 | <img src="AdminUI/DashboardAdmin5.png" width="220"/> | | |
 
+---
 
-# 5. Pengujian dan Evaluasi 
+## Peningkatan dari Versi Sebelumnya
 
-Pengujian dilakukan secara fungsional dengan memastikan setiap fitur berjalan sesuai dengan kebutuhan sistem. Berdasarkan hasil pengujian:
-- Aplikasi dapat berjalan dengan baik tanpa error utama.
-- Seluruh fitur utama dapat digunakan sesuai rancangan.
-- Penyimpanan data lokal berjalan dengan stabil.
+Hasil evaluasi terhadap versi sebelumnya menemukan beberapa kekurangan berikut:
+- Tampilan antarmuka masih sederhana
+- Belum tersedia tracking status pesanan
+- Belum tersedia sistem pembayaran yang lebih terstruktur
+- Dashboard admin masih terbatas
+- Fitur CRUD menu belum optimal
 
-# 6. Kesimpulan dan Saran 
-## 6.1 Kesimpulan
-Aplikasi CampEats berhasil dikembangkan sebagai aplikasi pemesanan makanan kampus berbasis Android. Aplikasi ini mampu mengelola menu, transaksi, serta data pengguna secara lokal dengan baik dan memberikan pengalaman pengguna yang cukup optimal.
+Berdasarkan temuan tersebut, pada semester ini dilakukan pengembangan sebagai berikut:
 
-## 6.2 Saran 
-Pengembangan selanjutnya dapat dilakukan dengan:
+- [x] Redesign tampilan aplikasi dengan konsep modern minimalis
+- [x] Penambahan halaman tracking pesanan
+- [x] Penambahan metode pembayaran digital
+- [x] Pengembangan dashboard admin
+- [x] Penambahan fitur CRUD menu makanan
+- [x] Optimalisasi navigasi pengguna
+- [x] Penyempurnaan alur checkout
 
-- Penambahan metode pembayaran digital
-- Implementasi notifikasi real-time
-- Pengembangan versi multiplatform
+---
 
+## Pengujian
 
+Pengujian dilakukan secara fungsional untuk memastikan setiap fitur berjalan sesuai dengan kebutuhan sistem.
 
+**Hasil pengujian:**
+- Aplikasi dapat berjalan dengan baik tanpa error utama
+- Seluruh fitur utama dapat digunakan sesuai rancangan
+- Penyimpanan data lokal berjalan dengan stabil
 
+---
 
+## Kesimpulan
 
+Hasil pengembangan lanjutan menunjukkan bahwa aplikasi **CampEats** mengalami peningkatan signifikan dari sisi tampilan, fitur, dan pengalaman pengguna dibandingkan versi sebelumnya.
 
+---
 
+## Informasi Proyek
 
-
-
-
-
+| Atribut | Detail |
+|---|---|
+| **Nama** | Muhamad Nikmal Wahid |
+| **NIM** | 312410372 |
+| **Kelas** | I241C |
+| **Mata Kuliah** | Pemrograman Mobile 2 |
+| **Dosen Pengampu** | Donny Maulana, S.Kom., M.M.S.I. |
+| **Project Board** | [ClickUp](https://app.clickup.com/90181799294/v/s/90187327418) |
