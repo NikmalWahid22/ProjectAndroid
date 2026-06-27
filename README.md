@@ -132,15 +132,15 @@ Pada semester sebelumnya, aplikasi CampEats versi awal telah dikembangkan dengan
 | Profile | <img src="UIDesign/Profile(Update).png" width="220"/> | Detail Produk | <img src="UIDesign/Detail(Update).png" width="220"/> |
 | Keranjang Update | <img src="UIDesign/Cart2(Update).png" width="220"/> | Tracking Order | <img src="UIDesign/OrderTracking(Update).png" width="220"/> |
 | Final Order | <img src="UIDesign/FinalizeOrder(Update).png" width="220"/> | Success Order | <img src="UIDesign/Success(Update).png" width="220"/> |
-| AI Assistant | <img src="UIDesign/AIAssistant(Update).png" width="220"/> | | |
+| AI Assistant | <img src="UIDesign/AIAssistant.png" width="220"/> | | |
 
 ### Tampilan Aplikasi — Sisi Admin (Design Figma)
 
 | Halaman | Preview | Halaman | Preview |
 |--------|---------|--------|---------|
-| Dashboard Admin 1 | <img src="AdminUI/DashboardAdmin.png" width="220"/> | Dashboard Admin 2 | <img src="AdminUI/DashboardAdmin2.png" width="220"/> |
-| Dashboard Admin 3 | <img src="AdminUI/DashboardAdmin3.png" width="220"/> | Dashboard Admin 4 | <img src="AdminUI/DashboardAdmin4.png" width="220"/> |
-| Dashboard Admin 5 | <img src="AdminUI/DashboardAdmin5.png" width="220"/> | | |
+| Dashboard Admin 1 | <img src="UIDesign/DashboardAdmin.png" width="220"/> | Dashboard Admin 2 | <img src="UIDesign/DashboardAdmin2.png" width="220"/> |
+| Dashboard Admin 3 | <img src="UIDesign/DashboardAdmin3.png" width="220"/> | Dashboard Admin 4 | <img src="UIDesign/DashboardAdmin4.png" width="220"/> |
+| Dashboard Admin 5 | <img src="UIDesign/DashboardAdmin5.png" width="220"/> | | |
 
 ---
 
