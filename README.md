@@ -1,6 +1,6 @@
 <div align="center">
 
-# CampEats
+# CanteenHub
 
 **Aplikasi Pemesanan Makanan Berbasis Android untuk Lingkungan Kampus**
 
@@ -33,7 +33,7 @@
 
 ## Tentang Proyek
 
-**CampEats** adalah aplikasi pemesanan makanan berbasis Android yang dirancang khusus untuk memudahkan aktivitas jual-beli makanan di lingkungan kampus. Proyek ini merupakan lanjutan dari pengembangan versi sebelumnya, dengan fokus utama pada **redesign UI/UX**, penambahan **fitur manajemen pesanan**, serta penyempurnaan **dashboard admin**.
+**CanteenHub** adalah aplikasi pemesanan makanan berbasis Android yang dirancang khusus untuk memudahkan aktivitas jual-beli makanan di lingkungan kampus. Proyek ini merupakan lanjutan dari pengembangan versi sebelumnya, dengan fokus utama pada **redesign UI/UX**, penambahan **fitur manajemen pesanan**, serta penyempurnaan **dashboard admin**.
 
 Aplikasi dibangun menggunakan **Java** dan **Android SDK**, dengan pendekatan **Material Design** untuk menghasilkan antarmuka yang bersih, modern, dan mudah digunakan oleh pengguna di lingkungan kampus.
 
@@ -43,7 +43,7 @@ Aplikasi dibangun menggunakan **Java** dan **Android SDK**, dengan pendekatan **
 
 ## Latar Belakang
 
-Pada semester sebelumnya, aplikasi CampEats versi awal telah dikembangkan dengan fitur dasar pemesanan makanan. Berdasarkan hasil evaluasi sistem, ditemukan beberapa area yang masih perlu ditingkatkan, di antaranya tampilan antarmuka, pengalaman pengguna, manajemen pesanan, serta kapasitas dashboard admin. Pengembangan lanjutan ini hadir untuk menjawab kebutuhan tersebut.
+Pada semester sebelumnya, aplikasi Canteenhub versi awal telah dikembangkan dengan fitur dasar pemesanan makanan. Berdasarkan hasil evaluasi sistem, ditemukan beberapa area yang masih perlu ditingkatkan, di antaranya tampilan antarmuka, pengalaman pengguna, manajemen pesanan, serta kapasitas dashboard admin. Pengembangan lanjutan ini hadir untuk menjawab kebutuhan tersebut.
 
 **Rumusan masalah yang menjadi fokus pengembangan:**
 1. Bagaimana merancang aplikasi pemesanan makanan berbasis Android yang mudah digunakan?
@@ -182,7 +182,7 @@ Pengujian dilakukan secara fungsional untuk memastikan setiap fitur berjalan ses
 
 ## Kesimpulan
 
-Hasil pengembangan lanjutan menunjukkan bahwa aplikasi **CampEats** mengalami peningkatan signifikan dari sisi tampilan, fitur, dan pengalaman pengguna dibandingkan versi sebelumnya.
+Hasil pengembangan lanjutan menunjukkan bahwa aplikasi **CanteenHub** mengalami peningkatan signifikan dari sisi tampilan, fitur, dan pengalaman pengguna dibandingkan versi sebelumnya.
 
 ---
 
