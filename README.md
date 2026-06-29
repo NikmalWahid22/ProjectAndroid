@@ -1,3 +1,13 @@
+
+| Atribut | Detail |
+|---|---|
+| **Nama** | Muhamad Nikmal Wahid |
+| **NIM** | 312410372 |
+| **Kelas** | I241C |
+| **Mata Kuliah** | Pemrograman Mobile 2 |
+| **Dosen Pengampu** | Donny Maulana, S.Kom., M.M.S.I. |
+
+
 <div align="center">
 
 # CanteenHub
@@ -186,13 +196,5 @@ Hasil pengembangan lanjutan menunjukkan bahwa aplikasi **CanteenHub** mengalami 
 
 ---
 
-## Informasi Proyek
 
-| Atribut | Detail |
-|---|---|
-| **Nama** | Muhamad Nikmal Wahid |
-| **NIM** | 312410372 |
-| **Kelas** | I241C |
-| **Mata Kuliah** | Pemrograman Mobile 2 |
-| **Dosen Pengampu** | Donny Maulana, S.Kom., M.M.S.I. |
-| **Project Board** | [ClickUp](https://app.clickup.com/90181799294/v/s/90187327418) |
+
